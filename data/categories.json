@@ -1,0 +1,846 @@
+{
+    "categories": [
+        {
+            "id": 0,
+            "name": "Various",
+            "name-de": "Verschiedenes",
+            "name-fr": "Divers",
+            "name-it": "Diversi",
+            "subcategories": [
+                {
+                    "id": 0,
+                    "name": "Gelling and binding agents",
+                    "name-de": "Gelier- und Bindemittel",
+                    "name-fr": "G\u00c3\u00a9lifiants et liants",
+                    "name-it": "Gelificanti e leganti"
+                },
+                {
+                    "id": 1,
+                    "name": "Yeast",
+                    "name-de": "Hefe",
+                    "name-fr": "Levure",
+                    "name-it": "Lievito"
+                },
+                {
+                    "id": 2,
+                    "name": "Baking ingredients",
+                    "name-de": "Backzutaten",
+                    "name-fr": "Ingr\u00c3\u00a9dients de boulangerie-p\u00c3\u00a2tisserie",
+                    "name-it": "Ingredienti per prodotti da forno"
+                },
+                {
+                    "id": 3,
+                    "name": "Sauces",
+                    "name-de": "Saucen",
+                    "name-fr": "Sauces",
+                    "name-it": "Salse"
+                },
+                {
+                    "id": 4,
+                    "name": "Salt, spices and flavours",
+                    "name-de": "Salz, Gew\u00c3\u00bcrze und Aromen",
+                    "name-fr": "Sel, \u00c3\u00a9pices et ar\u00c3\u00b4mes",
+                    "name-it": "Sale, spezie e aromi"
+                },
+                {
+                    "id": 5,
+                    "name": "Spreads",
+                    "name-de": "Aufstriche",
+                    "name-fr": "P\u00c3\u00a2tes \u00c3\u00a0 tartiner",
+                    "name-it": "Prodotti da spalmare"
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "name": "Sweets",
+            "name-de": "S\u00c3\u00bcssigkeiten",
+            "name-fr": "Sucreries",
+            "name-it": "Dolciumi",
+            "subcategories": [
+                {
+                    "id": 0,
+                    "name": "Sugar and sweeteners",
+                    "name-de": "Zucker und S\u00c3\u00bcssstoffe",
+                    "name-fr": "Sucres et \u00c3\u00a9dulcorants",
+                    "name-it": "Zuccheri ed edulcoranti"
+                },
+                {
+                    "id": 1,
+                    "name": "Cookies",
+                    "name-de": "Guetzli",
+                    "name-fr": "Biscuits",
+                    "name-it": "Biscotti"
+                },
+                {
+                    "id": 2,
+                    "name": "Cakes and tarts",
+                    "name-de": "Kuchen, Torten und Cake",
+                    "name-fr": "G\u00c3\u00a2teaux, tourtes et cakes",
+                    "name-it": "Dolci, torte e cake"
+                },
+                {
+                    "id": 3,
+                    "name": "Other sweet pastries",
+                    "name-de": "Sonstige s\u00c3\u00bcsse Backwaren",
+                    "name-fr": "Autres articles de p\u00c3\u00a2tisserie",
+                    "name-it": "Altre pasticcerie dolci"
+                },
+                {
+                    "id": 4,
+                    "name": "Chocolate and cocoa products",
+                    "name-de": "Schokolade und Kakaoerzeugnisse",
+                    "name-fr": "Chocolat et produits chocolat\u00c3\u00a9s",
+                    "name-it": "Cioccolato e prodotti a base di cacao"
+                },
+                {
+                    "id": 5,
+                    "name": "Jams and sweet sandwich spreads",
+                    "name-de": "Konfit\u00c3\u00bcren und s\u00c3\u00bcsse Brotaufstriche",
+                    "name-fr": "Confitures et produits \u00c3\u00a0 tartiner sucr\u00c3\u00a9s",
+                    "name-it": "Confettura e prodotti dolci da spalmare sul pane"
+                },
+                {
+                    "id": 6,
+                    "name": "Creams and puddings",
+                    "name-de": "Cremen und Pudding",
+                    "name-fr": "Cr\u00c3\u00a8mes et pouding",
+                    "name-it": "Creme e budini"
+                },
+                {
+                    "id": 7,
+                    "name": "Candies, fruits gums and chewing gum",
+                    "name-de": "Bonbons, Frucht- und Kaugummi",
+                    "name-fr": "Bonbons, bonbons g\u00c3\u00a9lifi\u00c3\u00a9s aux fruits et chewing-gums",
+                    "name-it": "Caramelle e gomme da masticare"
+                },
+                {
+                    "id": 8,
+                    "name": "Other sweets",
+                    "name-de": "Sonstige S\u00c3\u00bcssigkeiten",
+                    "name-fr": "Autres sucreries",
+                    "name-it": "Altri dolciumi"
+                },
+                {
+                    "id": 9,
+                    "name": "Milk based ice cream",
+                    "name-de": "Glacen auf Milchbasis",
+                    "name-fr": "Glaces \u00c3\u00a0 base de lait",
+                    "name-it": "Gelati a base di latte"
+                },
+                {
+                    "id": 10,
+                    "name": "Water based ice cream",
+                    "name-de": "Glacen auf Wasserbasis",
+                    "name-fr": "Glaces \u00c3\u00a0 base d'eau",
+                    "name-it": "Gelati a base di acqua"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Prepared dishes",
+            "name-de": "Gerichte",
+            "name-fr": "Plats",
+            "name-it": "Cibi",
+            "subcategories": [
+                {
+                    "id": 0,
+                    "name": "Other savoury dishes",
+                    "name-de": "Sonstige salzige",
+                    "name-fr": "Autres plats sal\u00c3\u00a9s",
+                    "name-it": "Altri cibi salati"
+                },
+                {
+                    "id": 1,
+                    "name": "Cakes, pies and gratins",
+                    "name-de": "Kuchen und Gratins",
+                    "name-fr": "Tartes sucr\u00c3\u00a9es et sal\u00c3\u00a9es et gratins",
+                    "name-it": "Torte dolci e salate e gratin"
+                },
+                {
+                    "id": 2,
+                    "name": "Asian dishes",
+                    "name-de": "Asiatische Gerichte",
+                    "name-fr": "Plats asiatiques",
+                    "name-it": "Cibi asiatici"
+                },
+                {
+                    "id": 3,
+                    "name": "Muesli",
+                    "name-de": "M\u00c3\u00bcesli",
+                    "name-fr": "M\u00c3\u00bcesli",
+                    "name-it": "Muesli"
+                },
+                {
+                    "id": 4,
+                    "name": "Stews and soups",
+                    "name-de": "Eint\u00c3\u00b6pfe und Suppen",
+                    "name-fr": "Potages et soupes",
+                    "name-it": "Brodi e zuppe"
+                },
+                {
+                    "id": 5,
+                    "name": "Italian dishes",
+                    "name-de": "Italienische Gerichte",
+                    "name-fr": "Plats italiens",
+                    "name-it": "Cibi italiani"
+                },
+                {
+                    "id": 6,
+                    "name": "Salads",
+                    "name-de": "Salate",
+                    "name-fr": "Salades",
+                    "name-it": "Insalate"
+                },
+                {
+                    "id": 7,
+                    "name": "Other sweet dishes",
+                    "name-de": "Sonstige s\u00c3\u00bcsse Gerichte",
+                    "name-fr": "Autres plats sucr\u00c3\u00a9s",
+                    "name-it": "Altri cibi dolci"
+                },
+                {
+                    "id": 8,
+                    "name": "Sandwiches",
+                    "name-de": "Sandwiches",
+                    "name-fr": "Sandwich",
+                    "name-it": "Sandwich"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Fruit",
+            "name-de": "Fr\u00c3\u00bcchte",
+            "name-fr": "Fruits",
+            "name-it": "Frutta",
+            "subcategories": [
+                {
+                    "id": 0,
+                    "name": "Cooked fruit (incl. cans)",
+                    "name-de": "Fr\u00c3\u00bcchte gekocht (inkl. Konserven)",
+                    "name-fr": "Fruits cuits (conserves comprises)",
+                    "name-it": "Frutta cotta (incl. conserve)"
+                },
+                {
+                    "id": 1,
+                    "name": "Fresh fruit",
+                    "name-de": "Fr\u00c3\u00bcchte frisch",
+                    "name-fr": "Fruits frais",
+                    "name-it": "Frutta fresca"
+                },
+                {
+                    "id": 2,
+                    "name": "Dried fruit",
+                    "name-de": "Fr\u00c3\u00bcchte getrocknet",
+                    "name-fr": "Fruits secs",
+                    "name-it": "Frutta secca"
+                },
+                {
+                    "id": 3,
+                    "name": "Fruit juices",
+                    "name-de": "Fruchts\u00c3\u00a4fte",
+                    "name-fr": "Jus de fruits",
+                    "name-it": "Succhi di frutta"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Non-alcoholic beverages",
+            "name-de": "Alkoholfreie Getr\u00c3\u00a4nke",
+            "name-fr": "Boissons sans alcool",
+            "name-it": "Bevande analcoliche",
+            "subcategories": [
+                {
+                    "id": 0,
+                    "name": "Fruit and vegetable juices",
+                    "name-de": "Frucht- und Gem\u00c3\u00bcses\u00c3\u00a4fte",
+                    "name-fr": "Jus de fruits et de l\u00c3\u00a9gumes",
+                    "name-it": "Succhi di frutta e di verdura"
+                },
+                {
+                    "id": 1,
+                    "name": "Coffee",
+                    "name-de": "Kaffee",
+                    "name-fr": "Caf\u00c3\u00a9",
+                    "name-it": "Caff\u00c3\u00a8"
+                },
+                {
+                    "id": 2,
+                    "name": "Soft drinks",
+                    "name-de": "S\u00c3\u00bcssgetr\u00c3\u00a4nke",
+                    "name-fr": "Boissons sucr\u00c3\u00a9es",
+                    "name-it": "Bevande zuccherate"
+                },
+                {
+                    "id": 3,
+                    "name": "Soft drinks energy reduced",
+                    "name-de": "S\u00c3\u00bcssgetr\u00c3\u00a4nke energievermindert",
+                    "name-fr": "Boissons \u00c3\u00a0 teneur reduite en sucre",
+                    "name-it": "Bevande a ridotto contenuto calorico"
+                },
+                {
+                    "id": 4,
+                    "name": "Tea",
+                    "name-de": "Tee",
+                    "name-fr": "Th\u00c3\u00a9",
+                    "name-it": "T\u00c3\u00a8"
+                },
+                {
+                    "id": 5,
+                    "name": "Cocoa beverages",
+                    "name-de": "Kakaogetr\u00c3\u00a4nke",
+                    "name-fr": "Boissons chocolat\u00c3\u00a9es",
+                    "name-it": "Bevande al cacao"
+                },
+                {
+                    "id": 6,
+                    "name": "Cordial",
+                    "name-de": "Sirup",
+                    "name-fr": "Sirop",
+                    "name-it": "Sciroppo"
+                },
+                {
+                    "id": 7,
+                    "name": "Drinking water",
+                    "name-de": "Trinkwasser",
+                    "name-fr": "Eau potable",
+                    "name-it": "Acqua potabile"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Alcoholic beverages",
+            "name-de": "Alkoholhaltige Getr\u00c3\u00a4nke",
+            "name-fr": "Boissons alcoolis\u00c3\u00a9es",
+            "name-it": "Bevande alcoliche",
+            "subcategories": [
+                {
+                    "id": 0,
+                    "name": "Wine",
+                    "name-de": "Wein",
+                    "name-fr": "Vin",
+                    "name-it": "Vino"
+                },
+                {
+                    "id": 1,
+                    "name": "Beer",
+                    "name-de": "Bier",
+                    "name-fr": "Bi\u00c3\u00a8re",
+                    "name-it": "Birra"
+                },
+                {
+                    "id": 2,
+                    "name": "Spirits",
+                    "name-de": "Spirituosen",
+                    "name-fr": "Spiritueux",
+                    "name-it": "Spiritosi"
+                },
+                {
+                    "id": 3,
+                    "name": "Other alcoholic beverages",
+                    "name-de": "Sonstige alkoholische Getr\u00c3\u00a4nke",
+                    "name-fr": "Autres boissons alcoolis\u00c3\u00a9es",
+                    "name-it": "Altre bevande alcoliche"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "name": "Milk and dairy products",
+            "name-de": "Milch und Milchprodukte",
+            "name-fr": "Lait et produits laitiers",
+            "name-it": "Latte e prodotti di latte",
+            "subcategories": [
+                {
+                    "id": 0,
+                    "name": "Hard cheese",
+                    "name-de": "Hartk\u00c3\u00a4se",
+                    "name-fr": "Fromage \u00c3\u00a0 p\u00c3\u00a2te dure",
+                    "name-it": "Formaggio a pasta dura"
+                },
+                {
+                    "id": 1,
+                    "name": "Fresh cheese and curds",
+                    "name-de": "Frischk\u00c3\u00a4se und Quark",
+                    "name-fr": "Fromage frais et s\u00c3\u00a9r\u00c3\u00a9",
+                    "name-it": "Formaggio fresco e quark"
+                },
+                {
+                    "id": 2,
+                    "name": "Cream and butter",
+                    "name-de": "Rahm und Butter",
+                    "name-fr": "Cr\u00c3\u00a8me et beurre",
+                    "name-it": "Panna e burro"
+                },
+                {
+                    "id": 3,
+                    "name": "Soft cheese",
+                    "name-de": "Weichk\u00c3\u00a4se",
+                    "name-fr": "Fromage \u00c3\u00a0 p\u00c3\u00a2te molle",
+                    "name-it": "Formaggio a pasta molle"
+                },
+                {
+                    "id": 4,
+                    "name": "Milk and yoghurt beverages",
+                    "name-de": "Milch- und Joghurtgetr\u00c3\u00a4nke",
+                    "name-fr": "Boissons lact\u00c3\u00a9es et yogourts \u00c3\u00a0 boire",
+                    "name-it": "Bevande a base di latte e yogurt"
+                },
+                {
+                    "id": 5,
+                    "name": "Yogurt and curdled milk",
+                    "name-de": "Joghurt und Sauermilch",
+                    "name-fr": "Yogourt et lait acidul\u00c3\u00a9",
+                    "name-it": "Yogurt e latte acidulato"
+                },
+                {
+                    "id": 6,
+                    "name": "Milk",
+                    "name-de": "Milch",
+                    "name-fr": "Lait",
+                    "name-it": "Latte"
+                },
+                {
+                    "id": 7,
+                    "name": "Cheese products",
+                    "name-de": "K\u00c3\u00a4seerzeugnisse",
+                    "name-fr": "Produits \u00c3\u00a0 base de fromage",
+                    "name-it": "Prodotti di formaggio"
+                },
+                {
+                    "id": 8,
+                    "name": "Milk substitutes",
+                    "name-de": "Milchersatzprodukte",
+                    "name-fr": "Substituts du lait",
+                    "name-it": "Prodotti sostituti del latte"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "name": "Vegetables",
+            "name-de": "Gem\u00c3\u00bcse",
+            "name-fr": "L\u00c3\u00a9gumes",
+            "name-it": "Verdure",
+            "subcategories": [
+                {
+                    "id": 0,
+                    "name": "Cooked vegetables (incl. cans)",
+                    "name-de": "Gem\u00c3\u00bcse gekocht (inkl. Konserven)",
+                    "name-fr": "L\u00c3\u00a9gumes cuits (conserves comprises)",
+                    "name-it": "Verdure cotte (incl. conserve)"
+                },
+                {
+                    "id": 1,
+                    "name": "Fresh vegetables",
+                    "name-de": "Gem\u00c3\u00bcse frisch",
+                    "name-fr": "L\u00c3\u00a9gumes frais",
+                    "name-it": "Verdure fresche"
+                },
+                {
+                    "id": 2,
+                    "name": "Herbs",
+                    "name-de": "Kr\u00c3\u00a4uter",
+                    "name-fr": "Herbes aromatiques",
+                    "name-it": "Erbe aromatiche"
+                },
+                {
+                    "id": 3,
+                    "name": "Dried vegetables",
+                    "name-de": "Gem\u00c3\u00bcse getrocknet",
+                    "name-fr": "L\u00c3\u00a9gumes secs",
+                    "name-it": "Verdure secche"
+                },
+                {
+                    "id": 4,
+                    "name": "Mushrooms",
+                    "name-de": "Pilze",
+                    "name-fr": "Champignons",
+                    "name-it": "Funghi"
+                },
+                {
+                    "id": 5,
+                    "name": "Vegetable juices",
+                    "name-de": "Gem\u00c3\u00bcses\u00c3\u00a4fte",
+                    "name-fr": "Jus de l\u00c3\u00a9gumes",
+                    "name-it": "Succhi di verdure"
+                },
+                {
+                    "id": 6,
+                    "name": "Sprouts and shoots",
+                    "name-de": "Sprossen und Keimlinge",
+                    "name-fr": "Pousses et germes",
+                    "name-it": "Germogli e piantine"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "name": "Sausages and cold meats",
+            "name-de": "Fleisch- und Wurstwaren",
+            "name-fr": "Produits carn\u00c3\u00a9s et charcuterie",
+            "name-it": "Prodotti carnei e insaccati",
+            "subcategories": [
+                {
+                    "id": 0,
+                    "name": "Boilded sausage products",
+                    "name-de": "Br\u00c3\u00bchwurstware",
+                    "name-fr": "Produits de charcuterie bouillis",
+                    "name-it": "Salsicce scottate"
+                },
+                {
+                    "id": 1,
+                    "name": "Raw sausage products",
+                    "name-de": "Rohwurstware",
+                    "name-fr": "Produits de charcuterie crus",
+                    "name-it": "Insaccati crudi"
+                },
+                {
+                    "id": 2,
+                    "name": "Cooked sausage products",
+                    "name-de": "Kochwurstware",
+                    "name-fr": "Produits de charcuterie cuits",
+                    "name-it": "Insaccati cotti"
+                },
+                {
+                    "id": 3,
+                    "name": "Other sausages and cold meats",
+                    "name-de": "Sonstige Fleisch- und Wurstwaren",
+                    "name-fr": "Autres produits carn\u00c3\u00a9s et produits de charcuterie",
+                    "name-it": "Altri prodotti carnei e insaccati"
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "name": "Nuts, seeds and oleaginous fruit",
+            "name-de": "N\u00c3\u00bcsse, Samen und \u00c3\u0096lfr\u00c3\u00bcchte",
+            "name-fr": "Noix, graines et produits ol\u00c3\u00a9agineux",
+            "name-it": "Noci, semi e frutti oleosi",
+            "subcategories": []
+        },
+        {
+            "id": 10,
+            "name": "Bread, flakes and breakfast cereals",
+            "name-de": "Brote, Flocken und Fr\u00c3\u00bchst\u00c3\u00bcckscerealien",
+            "name-fr": "Pains, flocons et c\u00c3\u00a9r\u00c3\u00a9ales pour le petit-d\u00c3\u00a9jeuner",
+            "name-it": "Pane, fiocchi e cereali per la prima colazione",
+            "subcategories": [
+                {
+                    "id": 0,
+                    "name": "Bread and bread products",
+                    "name-de": "Brote und Brotwaren",
+                    "name-fr": "Pains et produits de boulangerie",
+                    "name-it": "Pane e prodotti di panetteria"
+                },
+                {
+                    "id": 1,
+                    "name": "Muesli mixes and breakfast cereals",
+                    "name-de": "M\u00c3\u00bceslimischungen und Fr\u00c3\u00bchst\u00c3\u00bcckscerealien",
+                    "name-fr": "M\u00c3\u00a9langes de m\u00c3\u00bcesli et c\u00c3\u00a9r\u00c3\u00a9ales pour petit-d\u00c3\u00a9jeuner",
+                    "name-it": "Mix di muesli e cereali per la prima colazione"
+                },
+                {
+                    "id": 2,
+                    "name": "Flakes, bran and germs",
+                    "name-de": "Flocken, Kleie und Keime",
+                    "name-fr": "Flocons, son et germes",
+                    "name-it": "Fiocchi, crusca e germi"
+                },
+                {
+                    "id": 3,
+                    "name": "Crispbreads, rusks, crackers and wafers",
+                    "name-de": "Kn\u00c3\u00a4ckebrote, Zwieback, Crackers und Waffeln",
+                    "name-fr": "Pains croustillants, biscottes, crackers et gallettes",
+                    "name-it": "Pane croccante, fette biscottate, cracker e gallette"
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "name": "Special foods",
+            "name-de": "Speziallebensmittel",
+            "name-fr": "Denr\u00c3\u00a9es alimentaires sp\u00c3\u00a9ciales",
+            "name-it": "Alimenti speciali",
+            "subcategories": [
+                {
+                    "id": 0,
+                    "name": "Supplements",
+                    "name-de": "Supplemente",
+                    "name-fr": "Suppl\u00c3\u00a9ments",
+                    "name-it": "Supplementi"
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "name": "Cereal products, pulses and potatoes",
+            "name-de": "Getreideprodukte, H\u00c3\u00bclsenfr\u00c3\u00bcchte und Kartoffeln",
+            "name-fr": "Produits c\u00c3\u00a9r\u00c3\u00a9aliers, l\u00c3\u00a9gumineuses et pommes de terre",
+            "name-it": "Prodotti a base di cereali, legumi e patate",
+            "subcategories": [
+                {
+                    "id": 0,
+                    "name": "Dough",
+                    "name-de": "Teige",
+                    "name-fr": "P\u00c3\u00a2tes",
+                    "name-it": "Paste"
+                },
+                {
+                    "id": 1,
+                    "name": "Other cereal products",
+                    "name-de": "Sonstige Getreideprodukte",
+                    "name-fr": "Autres produits c\u00c3\u00a9r\u00c3\u00a9aliers",
+                    "name-it": "Altri prodotti a base di cereali"
+                },
+                {
+                    "id": 2,
+                    "name": "Pulses",
+                    "name-de": "H\u00c3\u00bclsenfr\u00c3\u00bcchte",
+                    "name-fr": "L\u00c3\u00a9gumineuses",
+                    "name-it": "Legumi"
+                },
+                {
+                    "id": 3,
+                    "name": "Flour and starch",
+                    "name-de": "Mehle und St\u00c3\u00a4rke",
+                    "name-fr": "Farines et amidon",
+                    "name-it": "Farine e amidi"
+                },
+                {
+                    "id": 4,
+                    "name": "Potatoes",
+                    "name-de": "Kartoffeln",
+                    "name-fr": "Pommes de terre",
+                    "name-it": "Patate"
+                },
+                {
+                    "id": 5,
+                    "name": "Corn",
+                    "name-de": "Mais",
+                    "name-fr": "Ma\u00c3\u00afs",
+                    "name-it": "Mais"
+                },
+                {
+                    "id": 6,
+                    "name": "Rice",
+                    "name-de": "Reis",
+                    "name-fr": "Riz",
+                    "name-it": "Riso"
+                },
+                {
+                    "id": 7,
+                    "name": "Pasta",
+                    "name-de": "Teigwaren",
+                    "name-fr": "P\u00c3\u00a2tes alimentaires",
+                    "name-it": "Pasta"
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "name": "Savoury snacks",
+            "name-de": "Salzige Snacks",
+            "name-fr": "Snacks sal\u00c3\u00a9s",
+            "name-it": "Snack salati",
+            "subcategories": [
+                {
+                    "id": 0,
+                    "name": "Puff pastry snacks",
+                    "name-de": "Bl\u00c3\u00a4tterteiggeb\u00c3\u00a4cke",
+                    "name-fr": "Produits en p\u00c3\u00a2te feuillet\u00c3\u00a9e",
+                    "name-it": "Prodotti di pasta sfoglia"
+                },
+                {
+                    "id": 1,
+                    "name": "Salt sticks and pretzels",
+                    "name-de": "Salzsticks und Bretzel",
+                    "name-fr": "Sticks sal\u00c3\u00a9s et bretzels",
+                    "name-it": "Bastonicini salati e brezel"
+                },
+                {
+                    "id": 2,
+                    "name": "Chips",
+                    "name-de": "Chips",
+                    "name-fr": "Chips",
+                    "name-it": "Patatine"
+                },
+                {
+                    "id": 3,
+                    "name": "Salted nuts, seeds and kernels",
+                    "name-de": "Gesalzene N\u00c3\u00bcsse, Samen, Kerne",
+                    "name-fr": "Noix et graines sal\u00c3\u00a9es",
+                    "name-it": "Noci e semi salati"
+                },
+                {
+                    "id": 4,
+                    "name": "Other savoury snacks",
+                    "name-de": "Sonstige salzige Snacks",
+                    "name-fr": "Autres snacks sal\u00c3\u00a9s",
+                    "name-it": "Altri snack salati"
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "name": "Fats and oils",
+            "name-de": "Fette und \u00c3\u0096le",
+            "name-fr": "Graisses et huiles",
+            "name-it": "Grassi e oli",
+            "subcategories": [
+                {
+                    "id": 0,
+                    "name": "Fats",
+                    "name-de": "Fette",
+                    "name-fr": "Graisses",
+                    "name-it": "Grassi"
+                },
+                {
+                    "id": 1,
+                    "name": "Oils",
+                    "name-de": "\u00c3\u0096le",
+                    "name-fr": "Huiles",
+                    "name-it": "Oli"
+                },
+                {
+                    "id": 2,
+                    "name": "Cream",
+                    "name-de": "Rahm",
+                    "name-fr": "Cr\u00c3\u00a8me",
+                    "name-it": "Panna"
+                },
+                {
+                    "id": 3,
+                    "name": "Salad dressings",
+                    "name-de": "Salatsaucen",
+                    "name-fr": "Sauces \u00c3\u00a0 salade",
+                    "name-it": "Salse per insalate"
+                },
+                {
+                    "id": 4,
+                    "name": "Mayonnaise",
+                    "name-de": "Mayonnaisen",
+                    "name-fr": "Mayonnaises",
+                    "name-it": "Maionese"
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "name": "Meat and offal",
+            "name-de": "Fleisch und Innereien",
+            "name-fr": "Viande et abats",
+            "name-it": "Carne e frattaglie",
+            "subcategories": [
+                {
+                    "id": 0,
+                    "name": "Veal",
+                    "name-de": "Kalb",
+                    "name-fr": "Veau",
+                    "name-it": "Vitello"
+                },
+                {
+                    "id": 1,
+                    "name": "Pork",
+                    "name-de": "Schwein",
+                    "name-fr": "Porc",
+                    "name-it": "Maiale"
+                },
+                {
+                    "id": 2,
+                    "name": "Poultry",
+                    "name-de": "Gefl\u00c3\u00bcgel",
+                    "name-fr": "Volaille",
+                    "name-it": "Pollame"
+                },
+                {
+                    "id": 3,
+                    "name": "Lamb, mutton",
+                    "name-de": "Lamm, Schaf",
+                    "name-fr": "Agneau, mouton",
+                    "name-it": "Agnello, pecora"
+                },
+                {
+                    "id": 4,
+                    "name": "Beef",
+                    "name-de": "Rind",
+                    "name-fr": "B\u00c5\u0093uf",
+                    "name-it": "Manzo"
+                },
+                {
+                    "id": 5,
+                    "name": "Game",
+                    "name-de": "Wild",
+                    "name-fr": "Gibier",
+                    "name-it": "Selvaggina"
+                },
+                {
+                    "id": 6,
+                    "name": "Other animal species",
+                    "name-de": "Sonstige Tierarten",
+                    "name-fr": "Autres esp\u00c3\u00a8ces animales",
+                    "name-it": "Altre specie animali"
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "name": "Fish",
+            "name-de": "Fisch",
+            "name-fr": "Poisson",
+            "name-it": "Pesce",
+            "subcategories": [
+                {
+                    "id": 0,
+                    "name": "Sea fish",
+                    "name-de": "Meeresfische",
+                    "name-fr": "Poissons de mer",
+                    "name-it": "Pesci di mare"
+                },
+                {
+                    "id": 1,
+                    "name": "Fresh water fish",
+                    "name-de": "S\u00c3\u00bcsswasserfische",
+                    "name-fr": "Poissons d'eau douce",
+                    "name-it": "Pesci d\u00e2\u0080\u0099acqua dolce"
+                },
+                {
+                    "id": 2,
+                    "name": "Seafood, crustaceans and shellfish",
+                    "name-de": "Meeresfr\u00c3\u00bcchte, Krusten- und Schalentiere",
+                    "name-fr": "Fruits de mer et crustac\u00c3\u00a9s",
+                    "name-it": "Frutti di mare e crostacei"
+                },
+                {
+                    "id": 3,
+                    "name": "Fish products",
+                    "name-de": "Fischerzeugnisse",
+                    "name-fr": "Produits \u00c3\u00a0 base de poisson",
+                    "name-it": "Prodotti della pesca"
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "name": "Eggs",
+            "name-de": "Eier",
+            "name-fr": "\u00c5\u0092ufs",
+            "name-it": "Uova",
+            "subcategories": []
+        },
+        {
+            "id": 18,
+            "name": "Meat substitutes",
+            "name-de": "Fleischersatzprodukte",
+            "name-fr": "Substituts de viande",
+            "name-it": "Prodotti sostituti della carne",
+            "subcategories": []
+        }
+    ],
+    "date": "25/08/2017",
+    "version": 5.3
+}
