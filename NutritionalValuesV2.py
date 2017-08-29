@@ -1,5 +1,6 @@
 """Food composition file wrapper."""
 from utils import Utils
+import config
 import time
 
 
@@ -10,7 +11,6 @@ class NutritionalValuesV2:
     data_path = 'data/'
     full_dataset = 'full-dataset.tsv'
     categories_dataset = 'categories.json'
-    categories_to_ids_dataset = 'categories-to-ids.json'
     food_dataset = {
         'de': 'dataset-de.json',
         'fr': 'dataset-fr.json',
@@ -90,21 +90,22 @@ class NutritionalValuesV2:
 
             # main_categ and sub_categ are defined by the english names
             main_categ = mcats[0]
-            if scats[1] != '':
-                sub_categ = scats[0]
-            else:
-                sub_categ = None
+            sub_categ = scats[0] if scats[1] != '' else None
 
             # create main categories if necessary
             if not any(d['name'] == main_categ for d in categories_list):
-                categories_list.append({
+                cat_item = {
                     'id': len(categories_list),
                     'name': main_categ,
-                    'name-fr': mcats[1],
-                    'name-de': mcats[2],
-                    'name-it': mcats[3],
                     'subcategories': []
-                })
+                }
+                if 'fr' in config.category_languages:
+                    cat_item['name-fr'] = mcats[1]
+                if 'de' in config.category_languages:
+                    cat_item['name-de'] = mcats[2]
+                if 'it' in config.category_languages:
+                    cat_item['name-it'] = mcats[3]
+                categories_list.append(cat_item)
 
             # create sub categories if necessary
             if sub_categ is not None:
@@ -113,13 +114,18 @@ class NutritionalValuesV2:
                 if not any(d['name'] == sub_categ
                            for d in cat['subcategories']):
                     # subcategory doesn't exist already --> creation
-                    cat['subcategories'].append({
+                    subcat_item = {
                         'id': len(cat['subcategories']),
-                        'name': sub_categ,
-                        'name-fr': scats[1],
-                        'name-de': scats[2],
-                        'name-it': scats[3]
-                    })
+                        'name': sub_categ
+                    }
+                    if 'fr' in config.category_languages:
+                        subcat_item['name-fr'] = scats[1]
+                    if 'de' in config.category_languages:
+                        subcat_item['name-de'] = scats[2]
+                    if 'it' in config.category_languages:
+                        subcat_item['name-it'] = scats[3]
+
+                    cat['subcategories'].append(subcat_item)
         return categories_list
 
     def _convert_unit(self, unit_name):
@@ -129,6 +135,10 @@ class NutritionalValuesV2:
             return 'kcal'
         if unit_name == 'gram':
             return 'g'
+        if unit_name == 'milligram':
+            return 'mg'
+        if unit_name == 'microgram':
+            return 'µg'
         if unit_name is not '':
             print('Warning: a unit name is not converted !', unit_name)
         return unit_name
@@ -183,12 +193,9 @@ class NutritionalValuesV2:
                     cat_id = str(category['id']) + '/' + str(subcat['id'])
                     categories_list[cat_name] = cat_id
             else:
-                cat_name = category['name']  # + '/'
-                cat_id = str(category['id'])  # + '/'
+                cat_name = category['name']
+                cat_id = str(category['id'])
                 categories_list[cat_name] = cat_id
-        # Utils.save_json_file(self.data_path,
-        #                      self.categories_to_ids_dataset,
-        #                      categories_list)
         return categories_list
 
     def read_food(self, lang):
@@ -208,7 +215,7 @@ class NutritionalValuesV2:
         # remove the header line
         del valnut[0]
 
-        food_structure = {}
+        food_structure = []
         for idx, entry in enumerate(valnut):
             food_name = entry[self.name_id[lang]]
             food_data = {}
@@ -239,25 +246,31 @@ class NutritionalValuesV2:
                       'maybe the product is a plasma state.')
 
             # composition
-            desired_fields = ['energy-kJ',  # write here the fields you need
-                              'protein',
-                              'sugars',
-                              'fat']
             composition = {}
-            for field in desired_fields:
+            for field in config.desired_values:
                 value = entry[self.composition_id[field]]
                 unit = self._convert_unit(
                     entry[self.composition_id[field] + 1])
-                composition[field] = {
-                    'value': value,
-                    'unit': unit
-                }
+                if value != '':
+                    composition[field] = {
+                        'value': value,
+                        'unit': unit
+                    }
             food_data['composition'] = composition
 
+            food_data['name'] = food_name
+            food_data['id'] = len(food_structure)
+
             # add the entry to the full array of food items
-            food_structure[food_name] = food_data
+            food_structure.append(food_data)
+
+        data = {
+            'food-items': food_structure,
+            'version': self.version,
+            'date': time.strftime("%d/%m/%Y")
+        }
 
         # save the full structure to a JSON file
         Utils.save_json_file(self.data_path,
                              self.food_dataset[lang],
-                             food_structure)
+                             data)
