@@ -17,69 +17,86 @@ The JSON files generated are of two types: the categories and the food items.
 
 There are 105 categories and more than hundred sub-categories. Here is a sample of the structure generated:
 
-	{
-	    "Alcoholic beverages": [
-	        "Wine",
-	        "Beer",
-	        "Spirits",
-	        "Other alcoholic beverages"
-	    ],
-	    "Bread, flakes and breakfast cereals": [
-	        "Bread and bread products",
-	        "Muesli mixes and breakfast cereals",
-	        "Flakes, bran and germs",
-	        "Crispbreads, rusks, crackers and wafers"
-	    ],
-	    ...
+    {
+        "categories": [
+            {
+                "id": 5,
+                "name": "Alcoholic beverages",
+                "name-de": "Alkoholhaltige Getränke",
+                "name-fr": "Boissons alcoolisées",
+                "name-it": "Bevande alcoliche",
+                "subcategories": [
+                    {
+                        "id": 0,
+                        "name": "Wine",
+                        "name-de": "Wein",
+                        "name-fr": "Vin",
+                        "name-it": "Vino"
+                    },
+                    ...
+                ]
+            },
+            ...
+        ],
+        "version": 5.3
     }
 
 
 ### Food items
 
-For the food and its composition, we have approx 1000 items. The structure looks like this:
+For the food and its composition, we have approx. 1000 items. The structure looks like this:
 
-	{
-	    "Apple juice": {
-	        "categories": {
-	            "Fruit": [
-	                "Fruit juices"
-	            ],
-	            "Non-alcoholic beverages": [
-	                "Fruit and vegetable juices"
-	            ]
-	        },
-	        "composition": {
-	            "energy-kJ": {
-	                "unit": "kJ",
-	                "value": "189"
-	            },
-	            "sugars": {
-	                "unit": "g",
-	                "value": "10.3"
-	            }
-	        },
-	        "liquid": 1
-	    },
-	    "Raclette cheese": {
-	        "categories": {
-	            "Milk and dairy products": [
-	                "Hard cheese"
-	            ]
-	        },
-	        "composition": {
-	            "energy-kJ": {
-	                "unit": "kJ",
-	                "value": "1490"
-	            },
-	            "sugars": {
-	                "unit": "g",
-	                "value": "0"
-	            }
-	        },
-	        "liquid": 0
-	    },
-	    ...
-	}
+    {
+        "food-items": [
+            {
+                "id": 637,
+                "name": "Raclette cheese",
+                "categories": [
+                    "6/0"
+                ],
+                "liquid": 0,
+                "composition": {
+                    "energy-kJ": {
+                        "unit": "kJ",
+                        "value": "1490"
+                    },
+                    "fat": {
+                        "unit": "g",
+                        "value": "27.9"
+                    },
+                    "sugars": {
+                        "unit": "g",
+                        "value": "0"
+                    }
+                }
+            }, {
+                "id": 14,
+                "name": "Apple juice",
+                "categories": [
+                    "3/3",
+                    "4/0"
+                ],
+                "liquid": 1,
+                "composition": {
+                    "energy-kJ": {
+                        "unit": "kJ",
+                        "value": "189"
+                    },
+                    "fat": {
+                        "unit": "g",
+                        "value": "0.1"
+                    },
+                    "sugars": {
+                        "unit": "g",
+                        "value": "10.3"
+                    }
+                }
+            },
+            ...
+        ]
+    }
+
+This file is very modular. We can choose the language of the items in the four languages available (en-fr-de-it). Regarding the composition, we can choose to generage each of the 37 components (vitamins, protein, carbs, calcium, water, and so on). The configuration is made in the `config.py` file.
 
 
 Usage
@@ -97,4 +114,4 @@ The data is based on the version 5.3 of the database. If a new version is out, j
 Contribute
 ----------
 
-We'd love to get contributions from you! Don't be shy ;)
+We'd love to get your ideas for any improvement! Open an issue ;)

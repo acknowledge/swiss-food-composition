@@ -1,18 +1,16 @@
 """Food composition file wrapper."""
 from utils import Utils
+import config
+import time
 
 
 class NutritionalValues:
     """Nutrional values class."""
 
+    version = 5.3
     data_path = 'data/'
     full_dataset = 'full-dataset.tsv'
-    categories_dataset = {
-        'de': 'dataset-categories-de.json',
-        'fr': 'dataset-categories-fr.json',
-        'it': 'dataset-categories-it.json',
-        'en': 'dataset-categories-en.json'
-    }
+    categories_dataset = 'categories.json'
     food_dataset = {
         'de': 'dataset-de.json',
         'fr': 'dataset-fr.json',
@@ -79,25 +77,55 @@ class NutritionalValues:
         'zinc': 196
     }
 
-    def __init__(self, lang):
+    def __init__(self):
         """Constructor."""
-        self.lang = lang
 
     def _format_categories(self, categories):
-        categories_list = {}
+        categories_list = []
         for categ in categories:
-            cat_details = categ.split('/')
-            main_categ = cat_details[0]
-            if len(cat_details) > 1:
-                sub_categ = cat_details[1]
-            else:
-                sub_categ = None
+            # add '/' at the end when no sub-category
+            categ = list(map(lambda x: x if ('/' in x) else x + '/', categ))
+            cat_details = [e.split('/') for e in categ]
+            mcats, scats = zip(*cat_details)
 
-            if main_categ not in categories_list:
-                categories_list[main_categ] = []
+            # main_categ and sub_categ are defined by the english names
+            main_categ = mcats[0]
+            sub_categ = scats[0] if scats[1] != '' else None
 
+            # create main categories if necessary
+            if not any(d['name'] == main_categ for d in categories_list):
+                cat_item = {
+                    'id': len(categories_list),
+                    'name': main_categ,
+                    'subcategories': []
+                }
+                if 'fr' in config.category_languages:
+                    cat_item['name-fr'] = mcats[1]
+                if 'de' in config.category_languages:
+                    cat_item['name-de'] = mcats[2]
+                if 'it' in config.category_languages:
+                    cat_item['name-it'] = mcats[3]
+                categories_list.append(cat_item)
+
+            # create sub categories if necessary
             if sub_categ is not None:
-                categories_list[main_categ].append(sub_categ)
+                cat = [d for d in categories_list
+                       if d['name'] == main_categ][0]
+                if not any(d['name'] == sub_categ
+                           for d in cat['subcategories']):
+                    # subcategory doesn't exist already --> creation
+                    subcat_item = {
+                        'id': len(cat['subcategories']),
+                        'name': sub_categ
+                    }
+                    if 'fr' in config.category_languages:
+                        subcat_item['name-fr'] = scats[1]
+                    if 'de' in config.category_languages:
+                        subcat_item['name-de'] = scats[2]
+                    if 'it' in config.category_languages:
+                        subcat_item['name-it'] = scats[3]
+
+                    cat['subcategories'].append(subcat_item)
         return categories_list
 
     def _convert_unit(self, unit_name):
@@ -107,6 +135,10 @@ class NutritionalValues:
             return 'kcal'
         if unit_name == 'gram':
             return 'g'
+        if unit_name == 'milligram':
+            return 'mg'
+        if unit_name == 'microgram':
+            return 'µg'
         if unit_name is not '':
             print('Warning: a unit name is not converted !', unit_name)
         return unit_name
@@ -114,12 +146,11 @@ class NutritionalValues:
     def read_categories(self):
         """Just print the categories."""
         categories = Utils.open_json_file(self.data_path,
-                                          self.categories_dataset[self.lang])
-
-        for idx, cat in enumerate(categories):
-            print(idx, cat)
-            for idx2, subcat in enumerate(categories[cat]):
-                print('\t', idx2, subcat)
+                                          self.categories_dataset)
+        for cat in categories['categories']:
+            print(str(cat['id']) + ' --> ' + cat['name'])
+            for subcat in cat['subcategories']:
+                print('\t' + str(subcat['id']) + ' --> ' + subcat['name'])
 
     def export_categories(self):
         """Export categories to a file."""
@@ -131,46 +162,76 @@ class NutritionalValues:
         categories = []
         for entry in valnut:
             # each product can have several categories
-            cats = entry[self.category_id[self.lang]].split(';')
+            cats_en = entry[self.category_id['en']].split(';')
+            cats_fr = entry[self.category_id['fr']].split(';')
+            cats_de = entry[self.category_id['de']].split(';')
+            cats_it = entry[self.category_id['it']].split(';')
+            cats = zip(cats_en, cats_fr, cats_de, cats_it)
             for cat in cats:
                 if cat not in categories:
                     categories.append(cat)
-        cat_structure = self._format_categories(categories)
+
+        cat_structure = {
+            'categories': self._format_categories(categories),
+            'version': self.version,
+            'date': time.strftime("%d/%m/%Y")
+        }
 
         Utils.save_json_file(self.data_path,
-                             self.categories_dataset[self.lang],
+                             self.categories_dataset,
                              cat_structure)
 
-    def read_food(self):
+    def categories_to_ids(self):
+        """Convert categories to ids."""
+        file_content = Utils.open_json_file(self.data_path,
+                                            self.categories_dataset)
+        categories_list = {}
+        for category in file_content['categories']:
+            if len(category['subcategories']) > 0:
+                for subcat in category['subcategories']:
+                    cat_name = category['name'] + '/' + subcat['name']
+                    cat_id = str(category['id']) + '/' + str(subcat['id'])
+                    categories_list[cat_name] = cat_id
+            else:
+                cat_name = category['name']
+                cat_id = str(category['id'])
+                categories_list[cat_name] = cat_id
+        return categories_list
+
+    def read_food(self, lang):
         """Just print the categories."""
         food = Utils.open_json_file(self.data_path,
-                                    self.food_dataset[self.lang])
+                                    self.food_dataset[lang])
 
         for idx, f in enumerate(food):
             print(idx, f)
             for idx2, subcat in enumerate(food[f]):
                 print('\t', idx2, subcat)
 
-    def export_food(self):
+    def export_food(self, lang):
         """Export categories to a file."""
         valnut = Utils.open_tsv_file(self.data_path, self.full_dataset)
 
         # remove the header line
         del valnut[0]
 
-        food_structure = {}
+        food_structure = []
         for idx, entry in enumerate(valnut):
-            food_name = entry[self.name_id[self.lang]]
+            food_name = entry[self.name_id[lang]]
             food_data = {}
 
             # synonyms
-            if entry[self.synonym_id[self.lang]]:
-                syns = entry[self.synonym_id[self.lang]].split(';')
+            if entry[self.synonym_id[lang]]:
+                syns = entry[self.synonym_id[lang]].split(';')
                 food_data['synonyms'] = syns
 
             # categories
-            categories = entry[self.category_id[self.lang]].split(';')
-            food_data['categories'] = self._format_categories(categories)
+            categories = entry[self.category_id['en']].split(';')
+            categ_links = self.categories_to_ids()
+            categs_list = []
+            for categ in categories:
+                categs_list.append(categ_links[categ])
+            food_data['categories'] = categs_list
 
             # liquid or solid
             liquid_or_solid = entry[self.liquid_or_solid_id]
@@ -185,25 +246,31 @@ class NutritionalValues:
                       'maybe the product is a plasma state.')
 
             # composition
-            desired_fields = ['energy-kJ',  # write here the fields you need
-                              'protein',
-                              'sugars',
-                              'fat']
             composition = {}
-            for field in desired_fields:
+            for field in config.desired_values:
                 value = entry[self.composition_id[field]]
                 unit = self._convert_unit(
                     entry[self.composition_id[field] + 1])
-                composition[field] = {
-                    'value': value,
-                    'unit': unit
-                }
+                if value != '':
+                    composition[field] = {
+                        'value': value,
+                        'unit': unit
+                    }
             food_data['composition'] = composition
 
+            food_data['name'] = food_name
+            food_data['id'] = len(food_structure)
+
             # add the entry to the full array of food items
-            food_structure[food_name] = food_data
+            food_structure.append(food_data)
+
+        data = {
+            'food-items': food_structure,
+            'version': self.version,
+            'date': time.strftime("%d/%m/%Y")
+        }
 
         # save the full structure to a JSON file
         Utils.save_json_file(self.data_path,
-                             self.food_dataset[self.lang],
-                             food_structure)
+                             self.food_dataset[lang],
+                             data)
