@@ -23,5 +23,5 @@ def generate_french_fries():
 
 if __name__ == '__main__':
 
-    # generate_all_files()
-    generate_french_fries()
+    generate_all_files()
+    # generate_french_fries()

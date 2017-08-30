@@ -3,7 +3,7 @@ Swiss Food Composition
 
 The Swiss Federal Food Safety and Veterinary Office ([FSVO](https://www.blv.admin.ch/blv/en/home.html)) has and maintain a [database](http://www.valeursnutritives.ch) of Swiss food composition. The database is available as a xslx file or through a webservice (more info [here](http://www.valeursnutritives.ch/request?xml=MessageData&xml=MetaData&xsl=Download&lan=en&pageKey=Start)).
 
-The goal of this repo is to convert the xlsx file into personalized JSON files. The files can contains just the needed data, in the needed language. Well constructed JSON files can be easier to query than a huge xlsx file or slow webservice.
+The goal of this repo is to convert the xlsx file into personalized JSON files. The files can contain just the needed data, in the needed language. Well constructed JSON files can be easier to query than a huge xlsx file or slow webservice.
 
 The dataset is available in four languages (English, German, French and Italian).
 
@@ -106,7 +106,7 @@ The program is made for Python 3 and does not require any additional library. Ju
 
 	python3.5 main.py
 
-Feel free to change the content of the `main.py` file to your needs. Without changes, it generates 8 files in the `data/` folder: the categories file and the food items file for each of the four languages.
+Feel free to change the content of the `main.py` file to your needs. Without changes, it generates files in the `data/` folder: the categories file and the food items file for each of the four languages.
 
 The data is based on the version 5.3 of the database. If a new version is out, just convert it to tsv and replace the content of `data/full-dataset.tsv` with it.
 
